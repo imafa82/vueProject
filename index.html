@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+<!--  <link rel="stylesheet" href="css/styles.css?v=1.0">-->
+
+
+</head>
+
+<body>
+    <div>
+        <div id="app">
+            
+                <counter subject="Likes"></counter>
+                <counter subject="Dislikes"></counter>
+            
+        </div>
+
+        <template id="counter-template">
+            <h1>{{subject}}</h1> 
+            <button @click="count += 1">{{count}}</button>
+        </template>
+    
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.1/vue.js"></script>
+  <script>
+     Vue.component('counter',{
+         template: '#counter-template',
+         props: ['subject'],
+         data: function(){
+            return { count:0 };
+         } 
+     })
+      new Vue({
+          el: '#app'
+      });
+      
+  </script>
+  </div>
+</body>
+</html>
